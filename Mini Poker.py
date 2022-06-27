@@ -8,8 +8,7 @@
 #                  nor received any unauthorized aid on this assignment.
 
 # Program description:
-# this program prints different sizes of Nashville's AT&T building using loops
-# ASCII art
+# this program outputs 3 card poker hands based on a seed
 import random
 
 SUITS = ['C', 'D', 'H', 'S']
