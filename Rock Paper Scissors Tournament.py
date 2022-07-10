@@ -1,15 +1,3 @@
-# Name: Lucas Schnee
-# VUnetID: schneelj
-# Email: lucas.j.schnee@vanderbilt.edu
-# Class: CS 1104 - Vanderbilt University
-# Section: 2
-# Date: 4/10/22
-# Honor statement: I attest that I understand the honor code for this class and have neither given
-#                  nor received any unauthorized aid on this assignment.
-
-# Program description:
-# this program runs an advanced rock paper scissors tournament with two different
-# phases depending on whether two people are left
 import random
 
 space = " "
