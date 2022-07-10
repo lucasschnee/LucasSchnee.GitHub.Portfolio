@@ -1,16 +1,3 @@
-# Name: Lucas Schnee
-# VUnetID: schneelj
-# Email: lucas.j.schnee@vanderbilt.edu
-# Class: CS 1104 - Vanderbilt University
-# Section: 2
-# Date: 4/28/22
-# Honor statement: I attest that I understand the honor code for this class and have neither given
-#                  nor received any unauthorized aid on this assignment.
-
-# Program description:
-# this program is the final project. There is a class template to represent a person and
-# their children. There also is a client program that uses class Person
-
 class Person:
 
     def __init__(self, name='N/A', birth_date='N/A', death_date=""):
