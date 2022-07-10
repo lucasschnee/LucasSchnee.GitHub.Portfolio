@@ -1,14 +1,3 @@
-# Name: Lucas Schnee
-# VUnetID: schneelj
-# Email: lucas.j.schnee@vanderbilt.edu
-# Class: CS 1104 - Vanderbilt University
-# Section: 2
-# Date: 4/2/22
-# Honor statement: I attest that I understand the honor code for this class and have neither given
-#                  nor received any unauthorized aid on this assignment.
-
-# Program description:
-# this program outputs 3 card poker hands based on a seed
 import random
 
 SUITS = ['C', 'D', 'H', 'S']
