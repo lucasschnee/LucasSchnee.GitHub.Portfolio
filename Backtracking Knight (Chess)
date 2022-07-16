@@ -1,3 +1,4 @@
+# DFS soln knight reaches every square on chessboard once
 import numpy as np
 
 move_x = [2, 1, -1, -2, -2, -1, 1, 2]
