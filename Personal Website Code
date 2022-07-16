@@ -1,3 +1,4 @@
+<!-- DOMAIN lucasschnee.com -->
 <!DOCTYPE html>
 <html>
 
@@ -11,30 +12,55 @@
  </head>
 
 
- <body style="background-color: lightblue;">
+ <body style="font-family:sans-serif;">
 
  	<header>
- 	<h1>Lucas Schnee</h1>
- 	<a href="https://github.com/lucasschnee/Lucas_Schnee_Projects" target="_blank"><h3>GitHub</h3></a>
+ 	<h1 style="font-variant:small-caps;text-align: center;">Lucas Schnee</h1>
 
 
- 	 <a href="https://www.linkedin.com/in/lucas-schnee-5419171b5/" target="_blank"><h3>LinkedIn</h3></a> 
+    <hr/>
 
- 	 <a href="https://leetcode.com/lucasschnee/" target="_blank"><h3>Leetcode</h3></a> 
+ 	<li> <a href="https://github.com/lucasschnee/Lucas_Schnee_Projects" target="_blank"><h3>GitHub</h3></a> </li>
+
+
+ 	<li> <a href="https://www.linkedin.com/in/lucas-schnee-5419171b5/" target="_blank"><h3>LinkedIn</h3></a> </li>
+
+ 	<li> <a href="https://leetcode.com/lucasschnee/" target="_blank"><h3>Leetcode</h3></a> </li>
 
  	</header>
 
 
 	<main>
 
- 	<hr/>
- 	<p>Hi, my name is Lucas Schnee, and I am a junior at <i>Vanderbilt University</i> studying Computer Science and Mathematics. This is a web-site that I built using HTML.</p>
+ 	
+ 	<p>   Hi, my name is Lucas Schnee, and I am a junior at <i>Vanderbilt University</i> studying Computer Science and Mathematics. This is a website that I built using HTML. I have two years of relevant experience.</p>
  	<br/>
- 	<p> Languages: Python (3 Years), C++ (1 Year), SQL (2 Years), Linux (1 Year), HTML (1 Year) </p>
+ 	<p> <b>Languages:</b> Python (3 Years), C++ (1 Year), SQL (2 Years), Linux (1 Year), HTML (1 Year) </p>
 
- 	<br/>
+    <br/>
 
- 	<img width="400" height="400" src="https://images.theconversation.com/files/378097/original/file-20210111-23-bqsfwl.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"   alt="Earth" />
+    <pre>
+    ███████████████████████████
+    ███████▀▀▀░░░░░░░▀▀▀███████
+    ████▀░░░░░░░░░░░░░░░░░▀████
+    ███│░░░░░░░░░░░░░░░░░░░│███
+    ██▌│░░░░░░░░░░░░░░░░░░░│▐██
+    ██░└┐░░░░░░░░░░░░░░░░░┌┘░██
+    ██░░└┐░░░░░░░░░░░░░░░┌┘░░██
+    ██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██
+    ██▌░│██████▌░░░▐██████│░▐██
+    ███░│▐███▀▀░░▄░░▀▀███▌│░███
+    ██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██
+    ██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██
+    ████▄─┘██▌░░░░░░░▐██└─▄████
+    █████░░▐█─┬┬┬┬┬┬┬─█▌░░█████
+    ████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████
+    █████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████
+    ███████▄░░░░░░░░░░░▄███████
+    ██████████▄▄▄▄▄▄▄██████████
+    ███████████████████████████
+    </pre>
+
 
  	</main>
 
