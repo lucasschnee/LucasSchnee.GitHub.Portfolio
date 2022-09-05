@@ -1,0 +1,62 @@
+# Lucas Schnee
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+
+def main(n, x_input, k):
+    lst_x = [random.random() for _ in range(n)]
+    lst_g_of_x = []
+
+    def get_g_of_x(num):
+        res = num ** 2 + 2 * num + 5  #polynomial
+        return res
+
+    for i in range(n):
+        tmp = get_g_of_x(lst_x[i])
+        lst_g_of_x.append(tmp)
+
+    lst_z = [np.random.normal(0) for _ in range(n)]
+    lst_y = []
+
+    for i in range(n):
+        res = lst_g_of_x[i] + lst_z[i]
+        lst_y.append(res)
+
+    lst_tmp = []
+    for i in range(len(lst_y)):
+        lst_tmp.append([lst_x[i], lst_y[i]])
+
+    lst_tmp.sort(key=lambda b: abs(b[0] - x_input))
+
+    lst_tmp[:] = lst_tmp[:k]
+
+    lst_x_2 = []
+
+    lst_y_2 = []
+    for arr in lst_tmp:
+        lst_x_2.append(arr[0])
+        lst_y_2.append(arr[1])
+
+    print(lst_x_2)
+    print(lst_y_2)
+
+    plt.title('Plot of Y (green = f-hat, magenta = f)', loc = 'left')
+    plt.title("n=" + str(n) + " x=" + str(x_input) + " k="+ str(k), loc='right')
+    plt.xlabel('x, blue=not k closest, cyan=kclosest')
+    plt.ylabel('g(X) + z')
+    x = lst_x
+    y = lst_y
+    plt.scatter(x, y)
+    plt.scatter(lst_x_2, lst_y_2, c="c")
+    z = np.polyfit(lst_x_2, lst_y_2, 1)
+    p = np.poly1d(z)
+    plt.plot(lst_x_2, p(lst_x_2), "g", linewidth=4)
+    k = lst_x
+    l = lst_g_of_x
+    z1 = np.polyfit(k, l, 1)
+    p1 = np.poly1d(z1)
+    plt.plot(k, p1(k), "m", linewidth=4)
+
+    plt.show()
+
+main(25, 0.65, 20)
