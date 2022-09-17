@@ -1,0 +1,66 @@
+<Module>
+<ModulePrefs title="Custom Gadget"/>
+<Content type="html">
+<![CDATA[
+<!-- DOMAIN lucasschnee.com -->
+<!DOCTYPE html>
+<html>
+
+
+ <head>
+
+ 	<meta charset="UTF-8">
+ 	<meta name="description" content="'Lucas Schnee website">
+ 	<title>Lucas Schnee's Website</title>
+
+ </head>
+
+
+ <body style="font-family:sans-serif;">
+
+ 	<header>
+ 	<h1 style="font-variant:small-caps;text-align: center;">Lucas Schnee</h1>
+
+
+    <hr/>
+
+
+
+ 	<h3><li> <a href="https://github.com/lucasschnee/Lucas_Schnee_Projects" target="_blank">GitHub</a> </li></h3>
+
+ 	<h3><li> <a href="https://www.linkedin.com/in/lucas-schnee-5419171b5/" target="_blank">LinkedIn</a> </li></h3>
+
+ 	<h3><li> <a href="https://leetcode.com/lucasschnee/" target="_blank">Leetcode</a> </li> </h3>
+
+
+ 	</header>
+
+
+	<main>
+
+
+ 	<p>   Hi, my name is Lucas Schnee, and I am a junior at <i>Vanderbilt University</i> studying Computer Science and Mathematics. I have two years of relevant experience. My current role is: software engineering intern for Capital One.</p>
+ 	
+   <br/>
+
+ 	<p> <b>Languages:</b> Python, C++, AWS, SQL, C, HTML </p>
+
+<p> <b>Interests:</b> AI, ML, Mathematical Modeling, Backend </p>
+
+    <br/>
+
+    <img src="https://static.wikia.nocookie.net/sexypedia/images/6/6a/Sans.png/revision/latest?cb=20200713200602" alt="sans">
+
+
+
+ 	</main>
+
+
+ 	
+
+ </body>
+
+</html>
+]]>
+</Content>
+</Module>
