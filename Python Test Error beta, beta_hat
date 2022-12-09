@@ -1,0 +1,99 @@
+# Lucas Schnee
+import random
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+def training_set(d):
+    N = math.floor(1.1 * (d ** 1.1))
+    # N = math.floor(d ** 2)
+    lst_D = []
+    for _ in range(N):
+        lst_tmp = []
+        for _ in range(d):
+            res = random.uniform(-.5, .5)
+            lst_tmp.append(res)
+        lst_D.append(lst_tmp)
+
+    D_arr = np.array(lst_D)
+
+    lst_z = []
+
+    for _ in range(N):
+        res = np.random.normal(0, math.sqrt(10))
+        lst_z.append(res)
+    z_arr = np.array([lst_z]).T
+
+    lst_beta = []
+    for _ in range(d):
+        lst_beta.append(1)
+
+    beta_arr = np.array([lst_beta]).T
+
+    y = np.matmul(D_arr, beta_arr) + z_arr
+
+    DT_arr = np.array(D_arr).T
+    DTD_arr = np.matmul(DT_arr, D_arr)
+    DTD_inv_arr = np.linalg.inv(DTD_arr)
+    DTy_arr = np.matmul(DT_arr, y)
+    beta_hat = np.matmul(DTD_inv_arr, DTy_arr)
+    return beta_hat
+
+
+def testing_set(d, beta_hat):
+    lst_x = []
+    for _ in range(2001):
+        lst_tmp = []
+        for _ in range(d):
+            x = random.uniform(-.5, .5)
+            lst_tmp.append(x)
+        lst_x.append(lst_tmp)
+
+    lst_beta = []
+    for _ in range(d):
+        lst_beta.append(1)
+
+    beta_arr = np.array([lst_beta]).T
+
+    test_arr = np.array(lst_x)
+    f_hat = np.matmul(test_arr, beta_hat)
+    f = np.matmul(test_arr, beta_arr)
+
+    test_error = []
+
+    for i in range(len(f)):
+        res = (f[i] - f_hat[i]) ** 2
+        test_error.append(res)
+
+
+    tot_error = sum(test_error)
+    avg_error = tot_error / 2000
+    return avg_error
+
+
+
+
+def main():
+    avg_error_lst = []
+    dimension_lst = []
+    for num in range(10, 201):
+        d = num
+        dimension_lst.append(d)
+        beta_hat = training_set(d)
+        avg_error = testing_set(d, beta_hat)
+        avg_error_lst.append(avg_error)
+
+    sigma_square = 10
+    two_sigma_square = 20
+
+    plt.plot(dimension_lst, avg_error_lst, "m")
+    plt.axhline(y=sigma_square, color='r', linestyle='-')
+    plt.axhline(y=two_sigma_square, color='g', linestyle='-')
+    plt.title("Test_Error_Graph", loc='right')
+    plt.ylabel('y = Avg_Error')
+    plt.xlabel('x = Dimension_d')
+    plt.show()
+
+
+
+main()
