@@ -1,1 +1,1 @@
-Website: [Lucasschnee.com]([Lucasschnee.com](https://www.lucasschnee.com))
+Website: [Lucasschnee.com](https://www.lucasschnee.com)
