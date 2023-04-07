@@ -1,0 +1,104 @@
+# Lucas Schnee
+import random
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+
+def main():
+    # def get_N():
+    N = int(input("Value of N: "))
+    K = N
+
+    # def training_set(N):
+    lst_x = []
+    lst_y = []
+    for i in range(N + 1):
+        xi = float(i / N)
+        lst_x.append(xi)
+        zi = np.random.normal(0, math.sqrt(.25))
+        yi = xi + zi
+        lst_y.append(yi)
+    D = np.array([lst_x]).T
+    y_arr = np.array([lst_y]).T
+    DT = np.array([lst_x])
+    DTD = np.matmul(DT, D)
+    DTD_inv = np.linalg.inv(DTD)
+    DTy = np.matmul(DT, y_arr)
+    beta_hat_arr = np.matmul(DTD_inv, DTy)
+    beta_hat = beta_hat_arr.tolist()
+
+    # def get_flreg(N, beta_hat):
+    flreg = []
+    for i in range(N + 1):
+        lreg = (i / N) * beta_hat[0][0]
+        flreg.append(lreg)
+
+    # def testing_set(K):
+    x_test = []
+
+    for i in range(K + 1):
+        xi = random.uniform(0, 1)
+        x_test.append(xi)
+
+    x_test.sort()
+
+    y_test = []
+
+    for i in range(K + 1):
+        yi = x_test[i] + np.random.normal(0, math.sqrt(.25))
+        y_test.append(yi)
+
+    # get_error_lr(K, y_test, flreg):
+    error_lr = []
+    for i in range(len(y_test)):
+        error = (y_test[i] - flreg[i]) ** 2
+        error_lr.append(error)
+
+    lr_error = sum(error_lr) * (1 / (K + 1))
+
+    print("lr error:", lr_error)
+
+    # interpolation(x, y, x_test):
+    lst_interp = []
+
+    for i in range(len(x_test)):
+        tmp = i
+        while lst_x[tmp] < x_test[i]:
+            tmp += 1
+
+        y_i = lst_y[tmp - 1]
+        y_iplus1 = lst_y[tmp]
+        x_i = lst_x[tmp - 1]
+        x_iplus1 = lst_x[tmp]
+        interp_tmp = ((x_iplus1 - x_test[i]) / (x_iplus1 - x_i)) * y_i + ((x_test[i] - x_i) / (x_iplus1 - x_i)) * y_iplus1
+        lst_interp.append(interp_tmp)
+
+    # get_error(x_test, y_test)
+    print(lst_interp)
+
+    error_spline = []
+
+    for i in range(len(x_test)):
+        error = (y_test[i] - lst_interp[i]) ** 2
+        error_spline.append(error)
+
+    avg_spline_error = sum(error_spline) * (1 / (K + 1))
+
+    print("flspl error:", avg_spline_error)
+
+    plt.scatter(x_test, lst_interp, color='m')
+    plt.scatter(x_test, y_test, color='b')
+    plt.scatter(lst_x, lst_y, color='k')
+
+    plt.plot(lst_x, lst_y)
+    plt.plot(lst_x, lst_x, "c")
+    plt.plot(lst_x, flreg, "y")
+
+    plt.title("flreg=yel, true_reg=cyan, train_pts=blk, test_pts=blue, flspl=mag", loc='right')
+    plt.ylabel('y = x_value + z (for pts)')
+    plt.xlabel('x = x_value        N=' + str(N))
+    plt.show()
+
+
+main()
